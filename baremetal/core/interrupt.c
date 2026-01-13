@@ -1,5 +1,8 @@
 #include "interrupt.h"
 #include "event_buffer.h"
+#include "drivers/gpio.h"
+#include "drivers/timer.h"
+#include "drivers/watchdog.h"
 
 #define IRQ_GPIO     5
 #define IRQ_TIMER    10
