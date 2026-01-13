@@ -15,3 +15,19 @@ initialization, and prepares the system for interrupt-driven event handling.
 - No HAL
 - No framework
 - Production-style layout
+
+
+## How to Test
+
+make
+sudo insmod arm_event_driver.ko
+cat /proc/arm_health
+sudo rmmod arm_event_driver
+
+Expected output:
+
+ARM Event Health Monitor
+GPIO_IRQ: 12
+TIMER_IRQ: 1024
+LAST_RESET: WATCHDOG
+
