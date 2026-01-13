@@ -1,12 +1,16 @@
-#include <stdint.h>
-
-volatile uint32_t heartbeat = 0;
+#include "core/interrupt.h"
+#include "core/event_buffer.h"
 
 int main(void)
 {
-    while (1)
-    {
-        heartbeat++;
-        for (volatile uint32_t i = 0; i < 100000; i++);
+    interrupt_init();
+
+    arm_event_t evt;
+
+    while (1) {
+        if (event_read(&evt) == 0) {
+            // Placeholder for debug / LED / trace
+            (void)evt;
+        }
     }
 }
